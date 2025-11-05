@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import { Amplify } from 'aws-amplify';
+import { getCurrentUser, signOut } from 'aws-amplify/auth';
 import LoginForm from './components/auth/LoginForm';
 import SignupForm from './components/auth/SignupForm';
 import Dashboard from './components/dashboard/Dashboard';
-import { cognitoConfig } from './config/awsConfig';
-
-// Uncomment the line below when you have your actual Cognito details
-// Amplify.configure(cognitoConfig);
+import './config/awsConfig';
 
 // --- Main App Component ---
 export default function App() {
@@ -17,17 +14,17 @@ export default function App() {
     useEffect(() => {
         const checkUser = async () => {
             try {
-                // REAL IMPLEMENTATION:
-                // const currentUser = await Auth.currentAuthenticatedUser();
-                // setUser(currentUser);
-                // setPage('dashboard');
+                const currentUser = await getCurrentUser();
+                setUser(currentUser);
+                // console.log(currentUser);
+                setPage('dashboard');
             } catch (error) {
                 // No user signed in
                 setUser(null);
                 setPage('login');
             }
         };
-        // checkUser();
+        checkUser();
     }, []);
 
     const handleLogin = (loggedInUser) => {
@@ -41,17 +38,13 @@ export default function App() {
     };
 
     const handleLogout = async () => {
-        // MOCK:
-        setUser(null);
-        setPage('login');
-        // REAL IMPLEMENTATION:
-        // try {
-        //     await Auth.signOut();
-        //     setUser(null);
-        //     setPage('login');
-        // } catch (error) {
-        //     console.error('Error signing out: ', error);
-        // }
+        try {
+            await signOut();
+            setUser(null);
+            setPage('login');
+        } catch (error) {
+            console.error('Error signing out: ', error);
+        }
     };
 
     // Simple router

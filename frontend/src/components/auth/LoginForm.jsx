@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { signIn } from 'aws-amplify/auth';
 import AuthLayout from './AuthLayout';
 
 const LoginForm = ({ onLogin, onSwitchToSignup }) => {
@@ -12,16 +13,8 @@ const LoginForm = ({ onLogin, onSwitchToSignup }) => {
         setIsLoading(true);
         setError('');
         try {
-            // MOCK: Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            if (email === 'test@example.com' && password === 'password') {
-                onLogin({ username: 'madhur' }); // Simulate successful login
-            } else {
-                throw new Error('Invalid credentials');
-            }
-            // REAL IMPLEMENTATION:
-            // const user = await Auth.signIn(email, password);
-            // onLogin(user);
+            const user = await signIn({ username: email, password });
+            onLogin(user);
         } catch (err) {
             setError(err.message || 'An error occurred during sign in.');
         } finally {

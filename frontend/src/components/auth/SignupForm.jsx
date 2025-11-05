@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { signUp, signIn } from 'aws-amplify/auth';
 import AuthLayout from './AuthLayout';
 
 const SignupForm = ({ onSignup, onSwitchToLogin }) => {
@@ -12,16 +13,10 @@ const SignupForm = ({ onSignup, onSwitchToLogin }) => {
         setIsLoading(true);
         setError('');
         try {
-            // MOCK: Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            console.log("Signing up with", email, password);
-            onSignup({ username: email }); // Simulate successful signup & login
-            // REAL IMPLEMENTATION:
-            // await Auth.signUp({ username: email, password });
-            // // After sign up, you might want to redirect to a confirmation page
-            // // or automatically sign them in. For simplicity, we'll just log them in.
-            // const user = await Auth.signIn(email, password);
-            // onSignup(user);
+            await signUp({ username: email, password });
+            // After sign up, automatically sign them in for simplicity
+            const user = await signIn({ username: email, password });
+            onSignup(user);
         } catch (err) {
             setError(err.message || 'An error occurred during sign up.');
         } finally {

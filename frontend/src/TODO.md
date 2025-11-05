@@ -12,3 +12,16 @@
 - [x] Move mockApiLogs to data/mockData.js
 - [x] Update App.jsx to import all components and constants
 - [ ] Test the application
+
+# Auth Integration Task
+
+## Completed
+- [x] Uncomment Amplify.configure in awsConfig.js
+- [x] Update App.jsx: Import Amplify and Auth, configure Amplify, replace mock logic with real Auth methods
+- [x] Update LoginForm.jsx: Replace mock login with Auth.signIn
+- [x] Update SignupForm.jsx: Replace mock signup with Auth.signIn (using new auth API)
+- [x] Update SignupForm.jsx: Replace mock signup with Auth.signUp (using new auth API)
+
+## Pending
+- [ ] Test sign up and login functionality
+- [ ] Verify Cognito User Pool settings (allow sign up, password policy)

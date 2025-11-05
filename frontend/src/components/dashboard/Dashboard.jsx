@@ -24,6 +24,7 @@ const Dashboard = ({ user, onLogout }) => {
         // Load initial data on mount
         runQuery();
     }, []);
+    console.log(user.email);
 
     return (
         <div className="min-h-screen w-full bg-gray-900 text-gray-200 font-sans">
@@ -32,7 +33,7 @@ const Dashboard = ({ user, onLogout }) => {
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
                     <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Chronos</h1>
                     <div className="flex items-center space-x-4">
-                        <span className="text-sm text-gray-400">Welcome, {user.username}</span>
+                        <span className="text-sm text-gray-400">Welcome</span>
                         <button onClick={onLogout} className="flex items-center space-x-2 text-gray-400 hover:text-white transition">
                             <LogOut size={16} />
                             <span>Logout</span>
