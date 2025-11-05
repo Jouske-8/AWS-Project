@@ -23,5 +23,5 @@
 - [x] Update SignupForm.jsx: Replace mock signup with Auth.signUp (using new auth API)
 
 ## Pending
-- [ ] Test sign up and login functionality
-- [ ] Verify Cognito User Pool settings (allow sign up, password policy)
+- [x] Test sign up and login functionality
+- [x] Verify Cognito User Pool settings (allow sign up, password policy)

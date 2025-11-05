@@ -6,9 +6,9 @@ import { Amplify } from 'aws-amplify';
 export const cognitoConfig = {
     Auth: {
         Cognito: {
-            region: 'eu-north-1', // Example: 'us-east-1'
-            userPoolId: 'eu-north-1_RUm7RLoxp', // Your User Pool ID
-            userPoolClientId: '2u6pcj8p8op4l4r2ngh8s6puvq', // Your User Pool Web Client ID
+            region: 'ap-south-1', // Example: 'us-east-1'
+            userPoolId: 'ap-south-1_puwv3fL69', // Your User Pool ID
+            userPoolClientId: '6t6rv0ua7a026tpg524redm79f', // Your User Pool Web Client ID
         }
     }
 };
