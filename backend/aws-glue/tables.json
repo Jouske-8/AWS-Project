@@ -1,0 +1,127 @@
+{
+    "TableList": [
+        {
+            "Name": "chronos_log_archive_2025",
+            "DatabaseName": "chronos-logs-db",
+            "Owner": "owner",
+            "CreateTime": "2025-11-07T03:07:33+05:30",
+            "UpdateTime": "2025-11-07T03:07:34+05:30",
+            "LastAccessTime": "2025-11-07T03:07:34+05:30",
+            "Retention": 0,
+            "StorageDescriptor": {
+                "Columns": [
+                    {
+                        "Name": "record_id",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "type",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "timestamp",
+                        "Type": "int"
+                    },
+                    {
+                        "Name": "method",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "path",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "queries",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "headers",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "body",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "statuscode",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "response_headers",
+                        "Type": "string"
+                    },
+                    {
+                        "Name": "response_body",
+                        "Type": "string"
+                    }
+                ],
+                "Location": "s3://chronos-log-archive-2025/",
+                "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+                "OutputFormat": "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat",
+                "Compressed": true,
+                "NumberOfBuckets": -1,
+                "SerdeInfo": {
+                    "SerializationLibrary": "org.openx.data.jsonserde.JsonSerDe",
+                    "Parameters": {
+                        "paths": "body,headers,method,path,queries,record_id,response_body,response_headers,statusCode,timestamp,type"
+                    }
+                },
+                "BucketColumns": [],
+                "SortColumns": [],
+                "Parameters": {
+                    "sizeKey": "1078",
+                    "objectCount": "1",
+                    "UPDATED_BY_CRAWLER": "chronos-api-crawler",
+                    "recordCount": "1",
+                    "CrawlerSchemaSerializerVersion": "1.0",
+                    "CRAWL_RUN_ID": "6c520189-986d-40f8-9213-553423383146",
+                    "averageRecordSize": "598",
+                    "partition_filtering.enabled": "true",
+                    "compressionType": "gzip",
+                    "CrawlerSchemaDeserializerVersion": "1.0",
+                    "classification": "json",
+                    "typeOfData": "file"
+                },
+                "StoredAsSubDirectories": false
+            },
+            "PartitionKeys": [
+                {
+                    "Name": "year",
+                    "Type": "string"
+                },
+                {
+                    "Name": "month",
+                    "Type": "string"
+                },
+                {
+                    "Name": "day",
+                    "Type": "string"
+                },
+                {
+                    "Name": "hour",
+                    "Type": "string"
+                }
+            ],
+            "TableType": "EXTERNAL_TABLE",
+            "Parameters": {
+                "sizeKey": "1078",
+                "objectCount": "1",
+                "UPDATED_BY_CRAWLER": "chronos-api-crawler",
+                "recordCount": "1",
+                "CrawlerSchemaSerializerVersion": "1.0",
+                "CRAWL_RUN_ID": "6c520189-986d-40f8-9213-553423383146",
+                "averageRecordSize": "598",
+                "partition_filtering.enabled": "true",
+                "compressionType": "gzip",
+                "CrawlerSchemaDeserializerVersion": "1.0",
+                "classification": "json",
+                "typeOfData": "file"
+            },
+            "CreatedBy": "arn:aws:sts::931097097394:assumed-role/AWSGlueServiceRole-base/AWS-Crawler",
+            "IsRegisteredWithLakeFormation": false,
+            "CatalogId": "931097097394",
+            "VersionId": "1",
+            "IsMultiDialectView": false
+        }
+    ]
+}

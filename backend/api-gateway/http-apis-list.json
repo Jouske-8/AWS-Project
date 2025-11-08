@@ -1,0 +1,56 @@
+{
+    "Items": [
+        {
+            "ApiEndpoint": "https://4z7u16l3m3.execute-api.ap-south-1.amazonaws.com",
+            "ApiId": "4z7u16l3m3",
+            "ApiKeySelectionExpression": "$request.header.x-api-key",
+            "CreatedDate": "2025-11-06T19:20:11+00:00",
+            "DisableExecuteApiEndpoint": false,
+            "IpAddressType": "ipv4",
+            "Name": "Chaotic-Test-API",
+            "ProtocolType": "HTTP",
+            "RouteSelectionExpression": "$request.method $request.path",
+            "Tags": {}
+        },
+        {
+            "ApiEndpoint": "https://moizlme24f.execute-api.ap-south-1.amazonaws.com",
+            "ApiId": "moizlme24f",
+            "ApiKeySelectionExpression": "$request.header.x-api-key",
+            "CreatedDate": "2025-11-04T15:19:03+00:00",
+            "DisableExecuteApiEndpoint": false,
+            "IpAddressType": "ipv4",
+            "Name": "Chronos-Proxy-API",
+            "ProtocolType": "HTTP",
+            "RouteSelectionExpression": "$request.method $request.path",
+            "Tags": {}
+        },
+        {
+            "ApiEndpoint": "https://zs98gr5vh5.execute-api.ap-south-1.amazonaws.com",
+            "ApiId": "zs98gr5vh5",
+            "ApiKeySelectionExpression": "$request.header.x-api-key",
+            "CorsConfiguration": {
+                "AllowCredentials": false,
+                "AllowHeaders": [
+                    "authorization",
+                    "content-type",
+                    "*"
+                ],
+                "AllowMethods": [
+                    "GET",
+                    "POST"
+                ],
+                "AllowOrigins": [
+                    "*"
+                ],
+                "MaxAge": 0
+            },
+            "CreatedDate": "2025-11-05T19:48:55+00:00",
+            "DisableExecuteApiEndpoint": false,
+            "IpAddressType": "ipv4",
+            "Name": "Chronos-Query-API",
+            "ProtocolType": "HTTP",
+            "RouteSelectionExpression": "$request.method $request.path",
+            "Tags": {}
+        }
+    ]
+}

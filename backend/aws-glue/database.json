@@ -1,0 +1,17 @@
+{
+    "Database": {
+        "Name": "chronos-logs-db",
+        "CreateTime": "2025-11-07T03:07:12+05:30",
+        "CreateTableDefaultPermissions": [
+            {
+                "Principal": {
+                    "DataLakePrincipalIdentifier": "IAM_ALLOWED_PRINCIPALS"
+                },
+                "Permissions": [
+                    "ALL"
+                ]
+            }
+        ],
+        "CatalogId": "931097097394"
+    }
+}

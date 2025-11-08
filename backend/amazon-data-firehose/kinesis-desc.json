@@ -1,0 +1,67 @@
+{
+    "DeliveryStreamDescription": {
+        "DeliveryStreamName": "chronos-delivery-stream",
+        "DeliveryStreamARN": "arn:aws:firehose:ap-south-1:931097097394:deliverystream/chronos-delivery-stream",
+        "DeliveryStreamStatus": "ACTIVE",
+        "DeliveryStreamEncryptionConfiguration": {
+            "Status": "DISABLED"
+        },
+        "DeliveryStreamType": "DirectPut",
+        "VersionId": "1",
+        "CreateTimestamp": "2025-11-04T20:40:02.138000+05:30",
+        "Destinations": [
+            {
+                "DestinationId": "destinationId-000000000001",
+                "S3DestinationDescription": {
+                    "RoleARN": "arn:aws:iam::931097097394:role/service-role/KinesisFirehoseServiceRole-chronos-deli-ap-south-1-1762268786538",
+                    "BucketARN": "arn:aws:s3:::chronos-log-archive-2025",
+                    "Prefix": "year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/",
+                    "ErrorOutputPrefix": "errors/",
+                    "BufferingHints": {
+                        "SizeInMBs": 5,
+                        "IntervalInSeconds": 300
+                    },
+                    "CompressionFormat": "GZIP",
+                    "EncryptionConfiguration": {
+                        "NoEncryptionConfig": "NoEncryption"
+                    },
+                    "CloudWatchLoggingOptions": {
+                        "Enabled": true,
+                        "LogGroupName": "/aws/kinesisfirehose/chronos-delivery-stream",
+                        "LogStreamName": "DestinationDelivery"
+                    }
+                },
+                "ExtendedS3DestinationDescription": {
+                    "RoleARN": "arn:aws:iam::931097097394:role/service-role/KinesisFirehoseServiceRole-chronos-deli-ap-south-1-1762268786538",
+                    "BucketARN": "arn:aws:s3:::chronos-log-archive-2025",
+                    "Prefix": "year=!{timestamp:yyyy}/month=!{timestamp:MM}/day=!{timestamp:dd}/hour=!{timestamp:HH}/",
+                    "ErrorOutputPrefix": "errors/",
+                    "BufferingHints": {
+                        "SizeInMBs": 5,
+                        "IntervalInSeconds": 300
+                    },
+                    "CompressionFormat": "GZIP",
+                    "EncryptionConfiguration": {
+                        "NoEncryptionConfig": "NoEncryption"
+                    },
+                    "CloudWatchLoggingOptions": {
+                        "Enabled": true,
+                        "LogGroupName": "/aws/kinesisfirehose/chronos-delivery-stream",
+                        "LogStreamName": "DestinationDelivery"
+                    },
+                    "ProcessingConfiguration": {
+                        "Enabled": false,
+                        "Processors": []
+                    },
+                    "S3BackupMode": "Disabled",
+                    "DataFormatConversionConfiguration": {
+                        "Enabled": false
+                    },
+                    "FileExtension": "",
+                    "CustomTimeZone": "UTC"
+                }
+            }
+        ],
+        "HasMoreDestinations": false
+    }
+}

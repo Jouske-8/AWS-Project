@@ -1,0 +1,50 @@
+{
+    "Crawler": {
+        "Name": "chronos-api-crawler",
+        "Role": "service-role/AWSGlueServiceRole-base",
+        "Targets": {
+            "S3Targets": [
+                {
+                    "Path": "s3://chronos-log-archive-2025",
+                    "Exclusions": []
+                }
+            ],
+            "JdbcTargets": [],
+            "MongoDBTargets": [],
+            "DynamoDBTargets": [],
+            "CatalogTargets": [],
+            "DeltaTargets": [],
+            "IcebergTargets": [],
+            "HudiTargets": []
+        },
+        "DatabaseName": "chronos-logs-db",
+        "Classifiers": [],
+        "RecrawlPolicy": {
+            "RecrawlBehavior": "CRAWL_EVERYTHING"
+        },
+        "SchemaChangePolicy": {
+            "UpdateBehavior": "LOG",
+            "DeleteBehavior": "LOG"
+        },
+        "LineageConfiguration": {
+            "CrawlerLineageSettings": "DISABLE"
+        },
+        "State": "READY",
+        "CrawlElapsedTime": 0,
+        "CreationTime": "2025-11-04T16:24:44+05:30",
+        "LastUpdated": "2025-11-06T23:55:31+05:30",
+        "LastCrawl": {
+            "Status": "SUCCEEDED",
+            "LogGroup": "/aws-glue/crawlers",
+            "LogStream": "chronos-api-crawler",
+            "MessagePrefix": "a321fe6a-d9bc-48ea-891e-2bd85e02e5d9",
+            "StartTime": "2025-11-07T12:17:46+05:30"
+        },
+        "Version": 6,
+        "Configuration": "{\"Version\":1.0,\"Grouping\":{\"TableGroupingPolicy\":\"CombineCompatibleSchemas\"},\"CreatePartitionIndex\":true}",
+        "LakeFormationConfiguration": {
+            "UseLakeFormationCredentials": false,
+            "AccountId": ""
+        }
+    }
+}
